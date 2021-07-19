@@ -104,3 +104,18 @@ playAgainBtn.addEventListener('click', () => {
 });
 
 displayWord();
+
+// API Call to get random words
+// async function getDem() {
+// 	const res = await fetch('https://random-words-api.vercel.app/word');
+// 	let data = await res.json();
+// 	let word = data[0].word;
+
+// 	console.log(word);
+// }
+
+// let wordsCount = 10;
+
+// for (let i = 0; i < wordsCount; i++) {
+// 	getDem();
+// }
