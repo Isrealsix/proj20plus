@@ -125,9 +125,7 @@ function speakText() {
 
 // Set voice
 function setVoice(ev) {
-	message.voice = voices.find(voice => (voice.name = ev.target.value));
-	console.log(ev.target.name);
-	console.log(message.voice);
+	message.voice = voices.find(voice => voice.name === ev.target.value);
 }
 
 // Event Listeners
