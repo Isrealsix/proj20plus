@@ -25,7 +25,7 @@ const ball = {
 const paddle = {
 	x: canvas.width / 2 - 40,
 	y: canvas.height - 20,
-	width: 80,
+	width: 800,
 	height: 10,
 	speed: 8,
 	dx: 0,
@@ -53,7 +53,7 @@ for (let i = 0; i < brickRowCount; i++) {
 	}
 }
 
-console.log(bricks);
+// console.log(bricks);
 
 // Draw ball on canvas
 function drawBall() {
@@ -164,7 +164,7 @@ function moveBall() {
 function increaseScore() {
 	score++;
 
-	if (score % (brickColumnCount * brickColumnCount) === 0) {
+	if (score % (brickColumnCount * brickRowCount) === 0) {
 		showAllBricks();
 		console.log(score);
 	}
