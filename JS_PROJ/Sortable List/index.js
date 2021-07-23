@@ -53,7 +53,7 @@ function createList() {
 function dragStart() {
     // console.log('drag start');
     dragStartIndex = +this.closest('li').getAttribute('data-index');
-    console.log(dragStartIndex);
+    // console.log(dragStartIndex);
 }
 
 function dragEnter() {
@@ -82,7 +82,7 @@ function dragDrop() {
 }
 
 
-
+// Swap list items thet are draggable 
 function swapItems(fromIdx, toIdx) {
     const itemOne = listItems[fromIdx].querySelector('.draggable');
     const itemTwo = listItems[toIdx].querySelector('.draggable');
@@ -92,6 +92,19 @@ function swapItems(fromIdx, toIdx) {
 
 }
 
+// Check the order of list items
+function checkOrder() {
+    listItems.forEach((listItem, idx) => {
+        const personName = listItem.querySelector('.draggable').innerText.trim();
+
+        if(personName !== richestPeople[idx]) {
+            listItem.classList.add('wrong')
+        } else {
+            listItem.classList.remove('wrong');
+            listItem.classList.add('right')
+        }
+    })
+}
 
 function addEventListeners() {
     const draggables = document.querySelectorAll('.draggable');
@@ -110,3 +123,6 @@ function addEventListeners() {
 
     })
 }
+
+
+check.addEventListener('click', checkOrder)
